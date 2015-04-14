@@ -79,8 +79,6 @@ int BinarySearchTree<T>::getHeight(TreeNode<T>* tNode)
    int count = 0;
 	if (tNode == NULL)
 		return 0;
-	else
-		count++;
 	
 	int count_left = 0;
 	int count_right = 0;
@@ -89,9 +87,9 @@ int BinarySearchTree<T>::getHeight(TreeNode<T>* tNode)
 	count_right = getHeight(tNode->getRight());
 
 	if (count_left > count_right)
-		return count_left + count;
+		return count_left + 1;
 	else
-		return count_right + count;
+		return count_right + 1;
 }
 
 template < class T >
@@ -196,17 +194,18 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
       if (first < last)
       {
          //initial log computations using mid
-         double k_left =                    //log base 2 of the number of items to the left of mid (including mid)
+         /*double k_left =                    //log base 2 of the number of items to the left of mid (including mid)
          double int_k_left =                //same as above but rounded
          double k_right =
          double int_k_right =
+		 */
 
          //keep searching for spot where the number of elements to the left of mid is 2^k - 1 (a full tree)
          //which means the number of elements to the left of mid including mid is 2^k 
          //or the number of elements to the right of mid is 2^k
          //compare the direct log computation and the computation cast to an int
          //to determine if the direct computation is an int
-         while (fabs(k_left - int_k_left) > TOL && fabs(k_right - int_k_right) > TOL)
+         //while (fabs(k_left - int_k_left) > TOL && fabs(k_right - int_k_right) > TOL)
          {
             mid++;
             //DO THIS
