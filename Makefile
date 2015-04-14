@@ -3,6 +3,8 @@ CC = g++
 
 FILES = BSTDriver.o
 EXECUTABLE = bstdriver.exe
+FILES_1 = DrawBST.o
+EXE = DrawBST.exe
 
 PROJECT_PATH = $(PROJECT_DIR)
 GTK_PATH = /$(DRIVE_LETTER)/MinGW/GTK
@@ -15,13 +17,17 @@ LIBS = -lCSC2110 -lgui -lgtkmm-3.0 -latkmm-1.6 -lgdkmm-3.0 -lgiomm-2.4 -lpangomm
 COMPILE = $(CC) $(INC_DIRS) -c
 LINK = $(CC) $(LIB_DIRS) -o
 
-FILES_1 = BSTDriver.o
-FILES_2 = DrawBST.o
 
-all: Lab12
+all: Lab12 Lab12Draw
 
 Lab12: 		$(FILES)
 		$(LINK) $(EXECUTABLE) $(FILES) $(LIBS)	
 
 BSTDriver.o:	BSTDriver.cpp BinarySearchTree.h
 		$(COMPILE) BSTDriver.cpp
+		
+Lab12Draw:	$(FILES_1)
+			$(LINK)	$(EXE)	$(FILES_1) $(LIBS)
+			
+DrawBST.o:	DrawBST.cpp	BinarySearchTree.h
+			$(COMPILE)	DrawBST.cpp

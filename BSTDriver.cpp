@@ -83,10 +83,13 @@ int main()
    //display whether the binary search tree is balanced (should be balanced)
 
 
+   cout << "Height: ";
+   cout << bst->getHeight() << endl;
 
-
-
-
+   if (bst->isBalanced())
+	   cout << "Balanced" << endl;
+   else
+	   cout << "Not Balanced" << endl;
 
 
 
@@ -109,7 +112,13 @@ int main()
    //display whether the binary search tree is balanced (should be balanced)
 
 
+   cout << "Height: ";
+   cout << bst->getHeight() << endl;
 
+   if (bst->isBalanced())
+	   cout << "Balanced" << endl;
+   else
+	   cout << "Not Balanced" << endl;
 
 
 
