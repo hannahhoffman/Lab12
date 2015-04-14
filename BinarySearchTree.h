@@ -107,7 +107,6 @@ bool BinarySearchTree<T>::isBalanced(TreeNode<T>* tNode)
 	if (tNode == NULL)
 		return 0;
 
-
 	int height_left = getHeight(tNode->getLeft());
 	int height_right = getHeight(tNode->getRight());
 
@@ -131,9 +130,8 @@ BinarySearchTree<T>* BinarySearchTree<T>::minimize()
    BinarySearchTree<T>* bst = new BinarySearchTree<T>(compare_items, compare_keys);
    //DO THIS
 
-
-
-
+   bst->minimize(items, 0, sze - 1);
+   return bst;
 }
 
 template < class T >
@@ -141,9 +139,15 @@ void BinarySearchTree<T>::minimize(T** items, int first, int last)
 {
    //DO THIS (recursive minimize method)
 
+	if (first > last)
+		return;
 
+	int mid = (first + last) / 2;
 
+	insert(items[mid]);
 
+	minimize(items, first, mid - 1);
+	minimize(items, mid + 1, last);
 
 }
 
@@ -193,7 +197,8 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
       if (first < last)
       {
          //initial log computations using mid
-         /*double k_left =                    //log base 2 of the number of items to the left of mid (including mid)
+         /*
+		 double k_left =                    //log base 2 of the number of items to the left of mid (including mid)
          double int_k_left =                //same as above but rounded
          double k_right =
          double int_k_right =
