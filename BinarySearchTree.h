@@ -69,23 +69,36 @@ template < class T >
 int BinarySearchTree<T>::getHeight()
 {
    //DO THIS
-
+	return getHeight(root);
 }
 
 template < class T >
 int BinarySearchTree<T>::getHeight(TreeNode<T>* tNode)
 {
    //DO THIS
+   int count = 0;
+	if (tNode == NULL)
+		return 0;
+	else
+		count++;
+	
+	int count_left = 0;
+	int count_right = 0;
+	
+	count_left = getHeight(tNode->getLeft());
+	count_right = getHeight(tNode->getRight());
 
-
-
+	if (count_left > count_right)
+		return count_left + count;
+	else
+		return count_right + count;
 }
 
 template < class T >
 bool BinarySearchTree<T>::isBalanced()
 {
    //DO THIS
-
+	
 }
 
 template < class T >
