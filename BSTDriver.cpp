@@ -63,7 +63,7 @@ int main()
    else
 	   cout << "Not Balanced" << endl;
 
-
+   cin.get();
 
    //create a minimum height binary search tree
    BinarySearchTree<CD>* min_bst = bst->minimize();
@@ -84,14 +84,14 @@ int main()
 
 
    cout << "Height: ";
-   cout << bst->getHeight() << endl;
+   cout << min_bst->getHeight() << endl;
 
-   if (bst->isBalanced())
+   if (min_bst->isBalanced())
 	   cout << "Balanced" << endl;
    else
 	   cout << "Not Balanced" << endl;
 
-
+   cin.get();
 
    //create a complete binary search tree
    BinarySearchTree<CD>* complete_bst = bst->minimizeComplete();
@@ -113,14 +113,14 @@ int main()
 
 
    cout << "Height: ";
-   cout << bst->getHeight() << endl;
+   cout << min_bst->getHeight() << endl;
 
-   if (bst->isBalanced())
+   if (min_bst->isBalanced())
 	   cout << "Balanced" << endl;
    else
 	   cout << "Not Balanced" << endl;
 
-
+   cin.get();
 
 
 

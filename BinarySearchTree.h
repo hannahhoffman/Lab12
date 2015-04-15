@@ -105,7 +105,7 @@ bool BinarySearchTree<T>::isBalanced(TreeNode<T>* tNode)
 {
    //DO THIS
 	if (tNode == NULL)
-		return 0;
+		return true;
 
 	int height_left = getHeight(tNode->getLeft());
 	int height_right = getHeight(tNode->getRight());
@@ -220,7 +220,6 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
 			int_k_left = (int)(k_left + 0.5); 
 			k_right = log(last - mid+1)*log_factor;
 			int_k_right = (int)(k_right + 0.5);
-
 
          }
       }
